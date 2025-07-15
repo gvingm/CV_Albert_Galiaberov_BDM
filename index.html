@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интерактивное резюме | Альберт Галиакберов</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        .chart-container {
+            position: relative;
+            height: 350px;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+        }
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .tab-btn {
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        .tab-btn.active {
+            border-color: #4f46e5;
+            color: #4f46e5;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8 max-w-7xl">
+
+        <!-- Header / Hero Section -->
+        <header class="text-center mb-12">
+            <div class="inline-block bg-white p-6 rounded-xl shadow-md">
+                <h1 class="text-4xl md:text-5xl font-bold text-slate-900">Галиакберов Альберт Таирович</h1>
+                <p class="mt-2 text-xl md:text-2xl text-indigo-600 font-semibold">Директор по маркетингу и цифровой трансформации</p>
+            </div>
+            <div class="mt-6 flex justify-center items-center flex-wrap gap-4 text-slate-600">
+                <span>Санкт-Петербург, готов к релокации</span>
+                <span class="hidden sm:inline">|</span>
+                <a href="tel:+79955996615" class="hover:text-indigo-600">+7 (995) 599-66-15</a>
+                <span class="hidden sm:inline">|</span>
+                <a href="mailto:a9633254529@icloud.com" class="hover:text-indigo-600">a9633254529@icloud.com</a>
+                <span class="hidden sm:inline">|</span>
+                <a href="https://t.me/gvingm" target="_blank" class="hover:text-indigo-600">Telegram: @gvingm</a>
+            </div>
+        </header>
+
+        <!-- Key Info Summary -->
+        <section id="summary" class="mb-12 bg-white p-8 rounded-xl shadow-lg">
+            <h2 class="text-2xl font-bold text-center mb-4 text-slate-800">Ключевая информация</h2>
+            <p class="text-center max-w-4xl mx-auto text-lg text-slate-700">
+                Директор по маркетингу и цифровой трансформации с 15-летним опытом в B2B и B2C. Специализируюсь на разработке и внедрении комплексных стратегий, объединяющих маркетинг, продажи и операционные процессы для кратного роста бизнеса. Архитектор сквозных IT-экосистем (CRM, FSM, ERP), обеспечивающих прозрачность данных и автоматизацию полного цикла от лида до прибыли. Доказанный опыт увеличения оборота до 400% и повышения рентабельности на 25% за счет системного подхода к управлению.
+            </p>
+        </section>
+
+        <!-- Competencies Section -->
+        <section id="competencies" class="mb-16">
+            <h2 class="section-title">Ключевые компетенции</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow">
+                    <h3 class="font-bold text-lg text-indigo-700 mb-3">Стратегия и рост бизнеса</h3>
+                    <ul class="space-y-2 text-slate-600">
+                        <li>• B2B & B2C Marketing Strategy</li>
+                        <li>• Go-to-Market & Product Marketing</li>
+                        <li>• Account-Based Marketing (ABM)</li>
+                        <li>• Сбалансированная система показателей (BSC)</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow">
+                    <h3 class="font-bold text-lg text-indigo-700 mb-3">Цифровая трансформация</h3>
+                    <ul class="space-y-2 text-slate-600">
+                        <li>• Внедрение CRM/ERP (Битрикс24, 1С)</li>
+                        <li>• Управление бизнес-процессами (BPMN)</li>
+                        <li>• Field Service Management (Planado)</li>
+                        <li>• Интеграция IT-систем</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow">
+                    <h3 class="font-bold text-lg text-indigo-700 mb-3">Лидогенерация и Performance</h3>
+                    <ul class="space-y-2 text-slate-600">
+                        <li>• PPC (Яндекс.Директ, Google Ads)</li>
+                        <li>• Programmatic & Media Advertising</li>
+                        <li>• Управление многоканальными кампаниями</li>
+                        <li>• Лидогенерация на маркетплейсах</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow">
+                    <h3 class="font-bold text-lg text-indigo-700 mb-3">Аналитика и технологии</h3>
+                    <ul class="space-y-2 text-slate-600">
+                        <li>• Сквозная аналитика (CallTouch, Alytics)</li>
+                        <li>• BI и визуализация данных (GDS)</li>
+                        <li>• A/B-тестирование и CRO</li>
+                        <li>• Технологии DMP и AI-инструменты</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2 class="section-title">Карьерный путь и достижения</h2>
+            <div class="flex flex-col md:flex-row gap-8">
+                <div id="tabs-container" class="w-full md:w-1/4 flex flex-row md:flex-col overflow-x-auto">
+                    <!-- Tab buttons will be inserted here by JS -->
+                </div>
+                <div id="tabs-content" class="w-full md:w-3/4 bg-white p-8 rounded-xl shadow-lg min-h-[400px]">
+                    <!-- Tab content will be inserted here by JS -->
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="text-center p-6 mt-12 bg-slate-800 text-slate-400">
+        <p>Альберт Галиакберов &copy; 2024</p>
+        <p class="text-sm mt-1">Это интерактивное резюме создано для демонстрации ключевых компетенций и достижений.</p>
+    </footer>
+
+    <script>
+        const experienceData = [
+            {
+                id: 'bioprime',
+                company: 'ООО «БиоПрайм»',
+                period: 'Январь 2023 – Июль 2024',
+                role: 'Директор по маркетингу и развитию',
+                description: 'Нанятый для усиления лидогенерации, выявил и устранил системные операционные проблемы, препятствующие масштабированию бизнеса. Выступил архитектором полной цифровой трансформации компании.',
+                achievements: [
+                    '<strong>Спроектировал и внедрил с нуля комплексную операционную IT-экосистему</strong>, интегрировав Битрикс24 (CRM), Planado (FSM), MySnab (Закупки) и 1С, устранив хаос в коммуникациях.',
+                    '<strong>Разработал и внедрил систему операционного учета</strong>, впервые обеспечив руководство данными в реальном времени о маржинальности по каждой сделке.',
+                    '<strong>Управлял маркетинговым бюджетом до 3 млн руб./мес.</strong>, добившись генерации до 350 MQL/мес. (B2C) и 150 MQL/мес. (B2B).',
+                    '<strong>Построил систему сквозной аналитики</strong>, объединив 12 разрозненных рекламных кабинетов и внедрив CallTouch и Alytics.',
+                    '<strong>Инициировал и протестировал более 8 новых каналов привлечения</strong>, включая Programmatic, Avito (120+ лидов за 2 месяца) и технологии DMP.'
+                ],
+                visual: {
+                    type: 'case_study',
+                    title: 'Кейс: Цифровая трансформация в «БиоПрайм»',
+                    chartData: {
+                        labels: ['MQL B2C / мес.', 'MQL B2B / мес.'],
+                        datasets: [{
+                            label: 'Макс. количество лидов',
+                            data: [350, 150],
+                            backgroundColor: ['rgba(79, 70, 229, 0.8)', 'rgba(30, 64, 175, 0.8)'],
+                            borderColor: ['#4f46e5', '#1e40af'],
+                            borderWidth: 1
+                        }]
+                    }
+                }
+            },
+            {
+                id: 'marinek',
+                company: 'ООО «Маринэк»',
+                period: 'Июль 2021 – Декабрь 2022',
+                role: 'Руководитель отдела маркетинга',
+                achievements: [
+                    '<strong>Сформировал отдел маркетинга с нуля</strong>, выстроив процессы по созданию контента, маркетинговой поддержке и выводу новых продуктов на рынок.',
+                    'Осуществил запуск и развитие продаж на ключевых B2B-маркетплейсах.',
+                    '<strong>Внедрил CRM-систему</strong> для систематизации работы с клиентской базой и повышения эффективности продаж.'
+                ],
+                 visual: null
+            },
+            {
+                id: 'stolberi',
+                company: 'Столбери',
+                period: 'Февраль 2020 – Июнь 2021',
+                role: 'Интернет-маркетолог',
+                achievements: [
+                    '<strong>Возглавил проект по цифровизации коммерции</strong>, что привело к <strong>росту оборота компании в 4 раза (400%)</strong>.',
+                    'Осуществил миграцию интернет-магазина на платформу 1С-Битрикс с полной интеграцией с 1С.',
+                    'Организовал выход и продвижение на всех ведущих маркетплейсах (Ozon, Wildberries, Aliexpress и др.).',
+                    'Настроил систему сквозной аналитики и разработал дашборды для отслеживания ключевых бизнес-метрик.'
+                ],
+                visual: {
+                    type: 'stat',
+                    value: 'x4',
+                    label: 'Рост оборота компании'
+                }
+            },
+            {
+                id: 'conveyor',
+                company: 'ООО «1-й Конвейерный Завод»',
+                period: 'Ноябрь 2017 – Февраль 2020',
+                role: 'Руководитель отдела маркетинга и рекламы',
+                achievements: [
+                    'Разработал и реализовал комплексную маркетинговую стратегию, которая обеспечила <strong>рост годового оборота и прибыли на 25%</strong>.',
+                    '<strong>Внедрил с нуля CRM Битрикс24</strong> и регламентировал бизнес-процессы для всех ключевых отделов, проведя обучение всего персонала.',
+                    'Построил систему сквозной аналитики, <strong>снизив стоимость целевого звонка до 1400 руб.</strong> в высококонкурентной B2B-нише.',
+                    'Запустил и развивал YouTube-канал компании как инструмент контент-маркетинга.'
+                ],
+                visual: {
+                    type: 'stat',
+                    value: '+25%',
+                    label: 'Рост прибыли'
+                }
+            },
+            {
+                id: 'iceberg',
+                company: 'Сеть клиник «Айсберг+»',
+                period: 'Март 2017 – Октябрь 2018',
+                role: 'Руководитель отдела маркетинга и рекламы',
+                achievements: [
+                    'Внедрил систему сквозной аналитики, <strong>снизив стоимость целевого звонка до 300 руб.</strong>',
+                    'Разработал и внедрил скрипты продаж для администраторов и провел обучение персонала.',
+                    'Управлял полным циклом digital-маркетинга: PPC, таргетированная реклама, SMM.'
+                ],
+                visual: null
+            }
+        ];
+
+        const tabsContainer = document.getElementById('tabs-container');
+        const contentContainer = document.getElementById('tabs-content');
+        let currentChart = null;
+        
+        function renderContent(experience) {
+            let visualHTML = '';
+            if (experience.visual) {
+                if (experience.visual.type === 'stat') {
+                    visualHTML = `
+                        <div class="mt-8 text-center p-6 bg-slate-50 rounded-lg">
+                            <p class="text-5xl font-bold text-indigo-600">${experience.visual.value}</p>
+                            <p class="mt-2 text-slate-600 font-medium">${experience.visual.label}</p>
+                        </div>
+                    `;
+                } else if (experience.visual.type === 'case_study') {
+                     visualHTML = `
+                        <div class="mt-8 pt-6 border-t border-slate-200">
+                            <h4 class="text-xl font-bold text-center mb-4 text-slate-800">${experience.visual.title}</h4>
+                            
+                            <div class="mb-8">
+                                <h5 class="font-semibold text-center mb-3 text-slate-700">Интегрированная IT-экосистема</h5>
+                                <div class="flex flex-wrap justify-center items-center gap-2 text-sm text-center">
+                                    <div class="p-3 bg-blue-100 text-blue-800 rounded-lg shadow-sm">Битрикс24 (CRM)</div>
+                                    <div class="text-slate-400 font-bold text-2xl">→</div>
+                                    <div class="p-3 bg-green-100 text-green-800 rounded-lg shadow-sm">Planado (FSM)</div>
+                                    <div class="text-slate-400 font-bold text-2xl">→</div>
+                                    <div class="p-3 bg-yellow-100 text-yellow-800 rounded-lg shadow-sm">MySnab (Закупки)</div>
+                                    <div class="text-slate-400 font-bold text-2xl">→</div>
+                                    <div class="p-3 bg-red-100 text-red-800 rounded-lg shadow-sm">1С (Учет)</div>
+                                </div>
+                                <p class="text-center text-xs mt-2 text-slate-500">Автоматизация полного цикла от продажи до отгрузки</p>
+                            </div>
+
+                            <div class="chart-container">
+                                <canvas id="mqlChart"></canvas>
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+
+            contentContainer.innerHTML = `
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">${experience.company}</h3>
+                    <p class="text-indigo-600 font-semibold">${experience.role}</p>
+                    <p class="text-sm text-slate-500 mb-4">${experience.period}</p>
+                    ${experience.description ? `<p class="mb-4 text-slate-700">${experience.description}</p>` : ''}
+                    <ul class="space-y-2 text-slate-600 list-disc list-inside">
+                        ${experience.achievements.map(ach => `<li>${ach}</li>`).join('')}
+                    </ul>
+                    ${visualHTML}
+                </div>
+            `;
+            
+            if (experience.visual && experience.visual.type === 'case_study') {
+                const ctx = document.getElementById('mqlChart').getContext('2d');
+                if(currentChart) {
+                    currentChart.destroy();
+                }
+                currentChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: experience.visual.chartData,
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'Результаты лидогенерации'
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Количество MQL'
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        experienceData.forEach((exp, index) => {
+            const btn = document.createElement('button');
+            btn.className = 'tab-btn text-left p-3 w-full text-slate-600 hover:bg-slate-100 rounded-md';
+            btn.innerHTML = `<span class="font-medium">${exp.company}</span><br><span class="text-sm">${exp.role}</span>`;
+            btn.onclick = () => {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderContent(exp);
+            };
+            tabsContainer.appendChild(btn);
+
+            if (index === 0) {
+                btn.classList.add('active');
+                renderContent(exp);
+            }
+        });
+
+    </script>
+</body>
+</html>
